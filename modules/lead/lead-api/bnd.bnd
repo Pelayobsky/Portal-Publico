@@ -1,0 +1,10 @@
+Bundle-Name: lead-api
+Bundle-SymbolicName: mx.movistar.col.lead.api
+Bundle-Version: 1.0.0
+Export-Package: \
+	mx.movistar.col.lead.exception,\
+	mx.movistar.col.lead.model,\
+	mx.movistar.col.lead.service,\
+	mx.movistar.col.lead.service.persistence,\
+	mx.movistar.col.lead.permission
+-includeresource: META-INF/service.xml=../lead-service/service.xml

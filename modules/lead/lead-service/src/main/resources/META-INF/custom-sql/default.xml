@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<custom-sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.listAllCampaigns">
+		<![CDATA[
+			SELECT LEAD_Campaign.*
+			FROM LEAD_Campaign
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.listAllLeads">
+		<![CDATA[
+			SELECT LEAD_Lead.*
+			FROM LEAD_Lead
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.listAllLeadScorings">
+		<![CDATA[
+			SELECT LEAD_LeadScoring.*
+			FROM LEAD_LeadScoring
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.countLeadReportEntriesByG_S_CampaignId">
+		<![CDATA[
+			SELECT
+			COUNT(*) AS COUNT_VALUE
+			FROM LEAD_LeadScoring
+			INNER JOIN LEAD_Lead ON
+					LEAD_Lead.leadId = LEAD_LeadScoring.leadId
+			INNER JOIN LEAD_Campaign ON
+					LEAD_Campaign.campaignId = LEAD_Lead.campaignId AND
+					LEAD_Campaign.groupId = LEAD_Lead.groupId AND
+					LEAD_Campaign.status = LEAD_Lead.status
+			WHERE LEAD_Lead.groupId = ? AND LEAD_Lead.status = ? AND
+			LEAD_Campaign.campaignId = ?
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.countLeadReportEntriesByG_S_LeadId">
+		<![CDATA[
+			SELECT
+			COUNT(*) AS COUNT_VALUE
+			FROM LEAD_LeadScoring
+			INNER JOIN LEAD_Lead ON
+					LEAD_Lead.leadId = LEAD_LeadScoring.leadId
+			INNER JOIN LEAD_Campaign ON
+					LEAD_Campaign.campaignId = LEAD_Lead.campaignId AND
+					LEAD_Campaign.groupId = LEAD_Lead.groupId AND
+					LEAD_Campaign.status = LEAD_Lead.status
+			WHERE LEAD_Lead.groupId = ? AND LEAD_Lead.status = ? AND
+			LEAD_Lead.leadId = ?
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.countLeadReportEntriesByG_S_DateRange">
+		<![CDATA[
+			SELECT
+			COUNT(*) AS COUNT_VALUE
+			FROM LEAD_LeadScoring
+			INNER JOIN LEAD_Lead ON
+					LEAD_Lead.leadId = LEAD_LeadScoring.leadId
+			INNER JOIN LEAD_Campaign ON
+					LEAD_Campaign.campaignId = LEAD_Lead.campaignId AND
+					LEAD_Campaign.groupId = LEAD_Lead.groupId AND
+					LEAD_Campaign.status = LEAD_Lead.status
+			WHERE LEAD_Lead.groupId = ? AND LEAD_Lead.status = ? AND
+			(LEAD_LeadScoring.createDate BETWEEN ? AND ? )
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.findLeadReportByG_S_DateRange">
+		<![CDATA[
+			SELECT
+			LEAD_LeadScoring.createDate AS createDate,
+			LEAD_Campaign.campaignId AS campaignId,
+			LEAD_Campaign.title AS campaignTitle,
+			LEAD_Lead.leadId AS leadId,
+			LEAD_Lead.title AS leadTitle,
+			LEAD_Lead.source AS source,
+			LEAD_Lead.product AS product,
+			LEAD_Lead.type_ AS type,
+			LEAD_Lead.totalScoring AS totalScoring,
+			LEAD_LeadScoring.leadScoringId AS leadScoringId,
+			LEAD_LeadScoring.createDate AS createDate,
+			LEAD_LeadScoring.msisdn AS msisdn,
+			LEAD_LeadScoring.email AS email,
+			LEAD_LeadScoring.name AS name,
+			LEAD_LeadScoring.surname AS surname,
+			LEAD_LeadScoring.extra1 AS extra1,
+			LEAD_LeadScoring.extra2 AS extra2,
+			LEAD_LeadScoring.extra3 AS extra3,
+			LEAD_LeadScoring.dateSchedule AS dateSchedule,
+			LEAD_LeadScoring.utmSource AS utmSource,
+			LEAD_LeadScoring.utmMedium AS utmMedium,
+			LEAD_LeadScoring.utmContent AS utmContent,
+			LEAD_LeadScoring.utmCampaign AS utmCampaign,
+			LEAD_LeadScoring.utmTerm AS utmTerm,
+			LEAD_LeadScoring.otherSource AS otherSource,
+			LEAD_LeadScoring.url AS url,
+			LEAD_LeadScoring.responseWS AS responseWS,
+			LEAD_LeadScoring.idCCWS AS idCCWS,
+			LEAD_LeadScoring.reTryDate AS reTryDate,
+			LEAD_LeadScoring.ipCliente AS ipClient,
+			LEAD_LeadScoring.origen AS origen
+			FROM LEAD_LeadScoring
+			INNER JOIN LEAD_Lead ON
+					LEAD_Lead.leadId = LEAD_LeadScoring.leadId
+			INNER JOIN LEAD_Campaign ON
+					LEAD_Campaign.campaignId = LEAD_Lead.campaignId AND
+					LEAD_Campaign.groupId = LEAD_Lead.groupId AND
+					LEAD_Campaign.status = LEAD_Lead.status
+			WHERE LEAD_Lead.groupId = ? AND LEAD_Lead.status = ? AND
+			(LEAD_LeadScoring.createDate BETWEEN ? AND ? )
+			ORDER BY LEAD_LeadScoring.createDate DESC
+			LIMIT ?,?;
+		]]>
+	</sql>
+	<sql id="mx.movistar.col.lead.service.persistence.LeadFinder.findLeadReportEntryByLeadScoringPK">
+		<![CDATA[
+			SELECT
+			LEAD_LeadScoring.createDate AS createDate,
+			LEAD_Campaign.campaignId AS campaignId,
+			LEAD_Campaign.title AS campaignTitle,
+			LEAD_Lead.leadId AS leadId,
+			LEAD_Lead.title AS leadTitle,
+			LEAD_Lead.source AS source,
+			LEAD_Lead.product AS product,
+			LEAD_Lead.type_ AS type,
+			LEAD_Lead.totalScoring AS totalScoring,
+			LEAD_LeadScoring.leadScoringId AS leadScoringId,
+			LEAD_LeadScoring.createDate AS createDate,
+			LEAD_LeadScoring.msisdn AS msisdn,
+			LEAD_LeadScoring.email AS email,
+			LEAD_LeadScoring.name AS name,
+			LEAD_LeadScoring.surname AS surname,
+			LEAD_LeadScoring.extra1 AS extra1,
+			LEAD_LeadScoring.extra2 AS extra2,
+			LEAD_LeadScoring.extra3 AS extra3,
+			LEAD_LeadScoring.dateSchedule AS dateSchedule,
+			LEAD_LeadScoring.utmSource AS utmSource,
+			LEAD_LeadScoring.utmMedium AS utmMedium,
+			LEAD_LeadScoring.utmContent AS utmContent,
+			LEAD_LeadScoring.utmCampaign AS utmCampaign,
+			LEAD_LeadScoring.utmTerm AS utmTerm,
+			LEAD_LeadScoring.otherSource AS otherSource,
+			LEAD_LeadScoring.url AS url,
+			LEAD_LeadScoring.responseWS AS responseWS,
+			LEAD_LeadScoring.idCCWS AS idCCWS,
+			LEAD_LeadScoring.reTryDate AS reTryDate,
+			LEAD_LeadScoring.ipCliente AS ipClient,
+			LEAD_LeadScoring.origen AS origen
+			FROM LEAD_LeadScoring
+			INNER JOIN LEAD_Lead ON
+					LEAD_Lead.leadId = LEAD_LeadScoring.leadId
+			INNER JOIN LEAD_Campaign ON
+					LEAD_Campaign.campaignId = LEAD_Lead.campaignId AND
+					LEAD_Campaign.groupId = LEAD_Lead.groupId AND
+					LEAD_Campaign.status = LEAD_Lead.status
+			WHERE LEAD_LeadScoring.leadScoringId = ?
+		]]>
+	</sql>
+	
+</custom-sql>

@@ -1,0 +1,10 @@
+Bundle-Name: libro-api
+Bundle-SymbolicName: com.movistar.local.libro.api
+Bundle-Version: 1.0.0
+Export-Package:\
+	com.movistar.local.libro.exception,\
+	com.movistar.local.libro.model,\
+	com.movistar.local.libro.service,\
+	com.movistar.local.libro.service.persistence
+-check: EXPORTS
+-includeresource: META-INF/service.xml=../libro-service/service.xml

@@ -1,0 +1,95 @@
+
+<%@ include file="../init.jsp"%>
+<%-- Generate view lead report URL. --%>
+
+<%--
+	Searchcontainer - Online Lead Report Fields.
+--%>
+
+<%
+
+	DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+	DateFormat timeFormat = new SimpleDateFormat("HH:mm:ss:SSS");
+
+%>
+
+<liferay-ui:search-container-column-text 
+	name="Nombre" 
+	value="<%= entry.getName() + " " + entry.getSurname() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Teléfono" 
+	value="<%= entry.getMsisdn() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Correo" 
+	value="<%= entry.getEmail() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Adicional" 
+	value="<%= entry.getProduct() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Fecha" 
+	value="<%= dateFormat.format(entry.getCreateDate()) %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Hora" 
+	value="<%= timeFormat.format(entry.getCreateDate()) %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Medio Movistar" 
+	value="<%= entry.getUtmMedium() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="ID" 
+	value="<%= String.valueOf(entry.getIdCCWS()) %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="URLRegistro" 
+	value="<%= entry.getUrl() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Origen" 
+	value="<%= entry.getSource() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="RWS" 
+	value="<%= entry.getReTryDate() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Recibe_Ofertas" 
+	value="<%= entry.getExtra1() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="DN_Portar" 
+	value="<%= entry.getExtra2() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="Fecha_Reenvio" 
+	value="<%= entry.getReTryDate() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="Hora_Reenvio" 
+	value="<%= entry.getReTryDate() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="ID_Landing_Lead" 
+	value="<%= String.valueOf(entry.getLeadScoringId()) %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="IP_Cliente" 
+	value="<%= entry.getClientIP() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="Equipo_Promocion" 
+	value=" " 
+/>
+<liferay-ui:search-container-column-text 
+	name="CodigoMovistar" 
+	value=" " 
+/>
+<liferay-ui:search-container-column-text 
+	name="CampanaOrigen" 
+	value=" " 
+/>

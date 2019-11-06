@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="false" default-lazy="false">
+	<import class="mx.movistar.col.lead.model.BlackList" />
+	<import class="mx.movistar.col.lead.model.CallCenter" />
+	<import class="mx.movistar.col.lead.model.Campaign" />
+	<import class="mx.movistar.col.lead.model.Lead" />
+	<import class="mx.movistar.col.lead.model.LeadScoring" />
+	<import class="mx.movistar.col.lead.model.Nir" />
+	<class name="mx.movistar.col.lead.model.impl.BlackListImpl" table="LEAD_BlackList">
+		<id name="blackListId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="numero" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="mx.movistar.col.lead.model.impl.CallCenterImpl" table="LEAD_CallCenter">
+		<id name="callCenterId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="campaignId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="dueDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statusDate" type="org.hibernate.type.TimestampType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="source" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="type_" name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="product" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="hasEmail" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="hasPhone" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="hasName" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="extra1" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="extra2" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="extra3" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="totalScoring" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="mx.movistar.col.lead.model.impl.CampaignImpl" table="LEAD_Campaign">
+		<id name="campaignId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="dueDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statusDate" type="org.hibernate.type.TimestampType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="mx.movistar.col.lead.model.impl.LeadImpl" table="LEAD_Lead">
+		<id name="leadId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property column="uuid_" name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="campaignId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="dueDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statusDate" type="org.hibernate.type.TimestampType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="source" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property column="type_" name="type" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="product" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="hasEmail" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="hasPhone" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="hasName" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="extra1" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="extra2" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="extra3" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="totalScoring" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="mx.movistar.col.lead.model.impl.LeadScoringImpl" table="LEAD_LeadScoring">
+		<id name="leadScoringId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="leadId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="msisdn" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="surname" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="extra1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="extra2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="extra3" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dateSchedule" type="org.hibernate.type.TimestampType" />
+		<property name="url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="utmSource" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="utmMedium" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="utmContent" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="utmCampaign" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="utmTerm" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="otherSource" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="responseWS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="idCCWS" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reTryDate" type="org.hibernate.type.TimestampType" />
+		<property name="ipCliente" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="origen" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="mx.movistar.col.lead.model.impl.NirImpl" table="LEAD_Nir">
+		<composite-id class="mx.movistar.col.lead.service.persistence.NirPK" name="primaryKey">
+			<key-property name="lada" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+			<key-property name="serie" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		</composite-id>
+	</class>
+</hibernate-mapping>

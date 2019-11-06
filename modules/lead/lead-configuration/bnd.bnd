@@ -1,0 +1,7 @@
+Bundle-Name: lead-configuration
+Bundle-SymbolicName: mx.movistar.col.lead.configuration
+Bundle-Version: 1.0.0
+Export-Package: \
+				mx.movistar.col.lead.configuration.api,\
+				mx.movistar.col.lead.configuration.definition,\
+				mx.movistar.col.lead.configuration

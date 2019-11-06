@@ -1,0 +1,11 @@
+Bundle-Name: COL Container
+Bundle-Description: Modulo de infraestructura que contiene todas las clases,API's,jars o cualquier libreria externa usada en Canalonline. \
+Notar que este modulo: \
+  1.- No contiene codigo directamente (si clases o jars incrustados) \
+  2.- Incluye todas las dependencias necesarias. \
+  3.- No importa ningun paquete, es autocontenido \
+  4.- Publica todos los paquetes que incluye.
+Bundle-SymbolicName: mx.movistar.col.container
+Bundle-Version: 1.0.0
+Export-Package: *;resolution:=optional
+Import-Package: *;resolution:=optional

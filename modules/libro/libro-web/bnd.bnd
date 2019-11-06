@@ -1,0 +1,4 @@
+Bundle-Name: libro-web
+Bundle-SymbolicName: com.movistar.local.libro
+Bundle-Version: 1.0.0
+Export-Package: com.movistar.local.libro.constants

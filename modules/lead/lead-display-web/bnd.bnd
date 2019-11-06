@@ -1,0 +1,4 @@
+Bundle-Name: lead-display-web
+Bundle-SymbolicName: mx.movistar.col.lead.display.web
+Bundle-Version: 1.0.0
+Export-Package: mx.movistar.col.lead.display.constants

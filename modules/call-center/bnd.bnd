@@ -1,0 +1,4 @@
+Bundle-Name: call-center
+Bundle-SymbolicName: call.center
+Bundle-Version: 1.0.0
+Export-Package: call.center.constants

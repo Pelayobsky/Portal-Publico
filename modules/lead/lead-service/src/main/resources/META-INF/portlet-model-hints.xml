@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="mx.movistar.col.lead.model.BlackList">
+		<field name="blackListId" type="long" />
+		<field name="numero" type="String" />
+	</model>
+	<model name="mx.movistar.col.lead.model.CallCenter">
+		<field name="uuid" type="String" />
+		<field name="callCenterId" type="long" />
+		<field name="campaignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field localized="true" name="title" type="String" />
+		<field name="description" type="String" />
+		<field name="source" type="String" />
+		<field name="type" type="String" />
+		<field name="product" type="String" />
+		<field name="hasEmail" type="boolean" />
+		<field name="hasPhone" type="boolean" />
+		<field name="hasName" type="boolean" />
+		<field name="extra1" type="boolean" />
+		<field name="extra2" type="boolean" />
+		<field name="extra3" type="boolean" />
+		<field name="totalScoring" type="int" />
+	</model>
+	<model name="mx.movistar.col.lead.model.Campaign">
+		<field name="uuid" type="String" />
+		<field name="campaignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field localized="true" name="title" type="String" />
+		<field name="description" type="String" />
+	</model>
+	<model name="mx.movistar.col.lead.model.Lead">
+		<field name="uuid" type="String" />
+		<field name="leadId" type="long" />
+		<field name="campaignId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="dueDate" type="Date" />
+		<field name="status" type="int" />
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field localized="true" name="title" type="String" />
+		<field name="description" type="String" />
+		<field name="source" type="String" />
+		<field name="type" type="String" />
+		<field name="product" type="String" />
+		<field name="hasEmail" type="boolean" />
+		<field name="hasPhone" type="boolean" />
+		<field name="hasName" type="boolean" />
+		<field name="extra1" type="boolean" />
+		<field name="extra2" type="boolean" />
+		<field name="extra3" type="boolean" />
+		<field name="totalScoring" type="int" />
+	</model>
+	<model name="mx.movistar.col.lead.model.LeadScoring">
+		<field name="leadScoringId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="leadId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="msisdn" type="String" />
+		<field name="email" type="String" />
+		<field name="name" type="String" />
+		<field name="surname" type="String" />
+		<field name="extra1" type="String" />
+		<field name="extra2" type="String" />
+		<field name="extra3" type="String" />
+		<field name="dateSchedule" type="Date" />
+		<field name="url" type="String">
+			<hint name="max-length">500</hint>
+		</field>
+		<field name="utmSource" type="String" />
+		<field name="utmMedium" type="String" />
+		<field name="utmContent" type="String" />
+		<field name="utmCampaign" type="String" />
+		<field name="utmTerm" type="String" />
+		<field name="otherSource" type="String" />
+		<field name="responseWS" type="String" />
+		<field name="idCCWS" type="String" />
+		<field name="reTryDate" type="Date" />
+		<field name="ipCliente" type="String" />
+		<field name="origen" type="String" />
+	</model>
+	<model name="mx.movistar.col.lead.model.Nir">
+		<field name="lada" type="String" />
+		<field name="serie" type="String" />
+	</model>
+</model-hints>

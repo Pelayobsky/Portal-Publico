@@ -1,0 +1,6 @@
+Bundle-Name: lead-panelapp
+Bundle-SymbolicName: mx.movistar.col.lead.panelapp
+Bundle-Version: 1.0.0
+Export-Package: \
+	mx.movistar.col.lead.panelapp.constants,\
+	mx.movistar.col.lead.panelapp.portlet.asset

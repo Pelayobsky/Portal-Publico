@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+
+<beans
+	default-destroy-method="destroy"
+	default-init-method="afterPropertiesSet"
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
+>
+	<bean class="mx.movistar.col.lead.service.impl.BlackListLocalServiceImpl" id="mx.movistar.col.lead.service.BlackListLocalService" />
+	<bean class="mx.movistar.col.lead.service.impl.BlackListServiceImpl" id="mx.movistar.col.lead.service.BlackListService" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.BlackListPersistenceImpl" id="mx.movistar.col.lead.service.persistence.BlackListPersistence" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.impl.CallCenterLocalServiceImpl" id="mx.movistar.col.lead.service.CallCenterLocalService" />
+	<bean class="mx.movistar.col.lead.service.impl.CallCenterServiceImpl" id="mx.movistar.col.lead.service.CallCenterService" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.CallCenterPersistenceImpl" id="mx.movistar.col.lead.service.persistence.CallCenterPersistence" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.CallCenterFinderImpl" id="mx.movistar.col.lead.service.persistence.CallCenterFinder" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.impl.CampaignLocalServiceImpl" id="mx.movistar.col.lead.service.CampaignLocalService" />
+	<bean class="mx.movistar.col.lead.service.impl.CampaignServiceImpl" id="mx.movistar.col.lead.service.CampaignService" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.CampaignPersistenceImpl" id="mx.movistar.col.lead.service.persistence.CampaignPersistence" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.impl.LeadLocalServiceImpl" id="mx.movistar.col.lead.service.LeadLocalService" />
+	<bean class="mx.movistar.col.lead.service.impl.LeadServiceImpl" id="mx.movistar.col.lead.service.LeadService" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.LeadPersistenceImpl" id="mx.movistar.col.lead.service.persistence.LeadPersistence" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.LeadFinderImpl" id="mx.movistar.col.lead.service.persistence.LeadFinder" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.impl.LeadScoringLocalServiceImpl" id="mx.movistar.col.lead.service.LeadScoringLocalService" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.LeadScoringPersistenceImpl" id="mx.movistar.col.lead.service.persistence.LeadScoringPersistence" parent="basePersistence" />
+	<bean class="mx.movistar.col.lead.service.impl.NirLocalServiceImpl" id="mx.movistar.col.lead.service.NirLocalService" />
+	<bean class="mx.movistar.col.lead.service.impl.NirServiceImpl" id="mx.movistar.col.lead.service.NirService" />
+	<bean class="mx.movistar.col.lead.service.persistence.impl.NirPersistenceImpl" id="mx.movistar.col.lead.service.persistence.NirPersistence" parent="basePersistence" />
+</beans>

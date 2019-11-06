@@ -1,0 +1,9 @@
+Bundle-Name: lead-service
+Bundle-SymbolicName: mx.movistar.col.lead.service
+Bundle-Version: 1.1.0
+Liferay-Require-SchemaVersion: 1.1.0
+Liferay-Service: true
+Export-Package: \
+	mx.movistar.col.lead.service.search,\
+	mx.movistar.col.lead.permission,\
+	mx.movistar.col.lead.model.impl

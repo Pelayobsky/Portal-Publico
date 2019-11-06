@@ -1,0 +1,144 @@
+
+<%@ include file="../init.jsp"%>
+<%-- Generate view lead report URL. --%>
+
+<%--
+	Searchcontainer - Cron Job Lead Report Fields.
+--%>
+
+<liferay-ui:search-container-column-text 
+	name="WSIDEXT" 
+	value="<%= String.valueOf(entry.getIdCCWS()) %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="WSTS" 
+	value="<%= entry.getCreateDate() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="WSDATE" 
+	value="<%= entry.getCreateDate() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="WSTIME" 
+	value="<%= entry.getCreateDate() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSTYPE" 
+	value="<%= entry.getType() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSPROVIDER" 
+	value="<%= entry.getUtmSource() + "|" + entry.getUtmMedium() + "|" + entry.getUtmContent() + "|" + entry.getUtmCampaign() + "|" + entry.getUtmTerm() + "|" + entry.getUtmSource()%>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSPHONE" 
+	value="<%= entry.getMsisdn() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSNAME" 
+	value="<%= entry.getName() + " " + entry.getSurname() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSEMAIL" 
+	value="<%= entry.getEmail() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSIP" 
+	value="<%= entry.getClientIP() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSURL" 
+	value="<%= entry.getUrl() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSPRODUCT" 
+	value="<%= entry.getProduct() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="WSOFFER" 
+	value="<%= entry.getCampaignTitle().get(themeDisplay.getLocale()) %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="WSDATESCHEDULED" 
+	value="<%= entry.getDateSchedule() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="TIMESCHEDULED" 
+	value="<%= entry.getDateSchedule() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="USER_RECEIVE_OFFERS" 
+	value="<%= entry.getExtra1() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="OTHER_SOURCE" 
+	value="<%= entry.getOtherSource() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="UTM_SOURCE" 
+	value="<%= entry.getUtmSource() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="UTM_MEDIUM" 
+	value="<%= entry.getUtmMedium() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="UTM_CONTENT" 
+	value="<%= entry.getUtmContent() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="UTM_CAMPAIGN" 
+	value="<%= entry.getUtmCampaign() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="UTM_TERM" 
+	value="<%= entry.getUtmTerm() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="LANDING_NAME" 
+	value="<%= " " %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="NUMERO_PORTAR" 
+	value="<%= entry.getExtra2() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="COMPANIA_ACTUAL" 
+	value="<%= entry.getExtra3() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="CAMPNAME" 
+	value="<%= " " %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="CAMPURI" 
+	value="<%= entry.getUrl() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="ID_LANDING_LEAD" 
+	value="<%= String.valueOf(entry.getLeadScoringId()) %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="ADICIONAL_COMENTARIOS" 
+	value="<%= entry.getProduct() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="ORIGEN" 
+	value="<%= entry.getSource() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="RWS" 
+	value="<%= entry.getReTryDate() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="FECHA_REENVIO" 
+	value="<%= entry.getReTryDate() %>" 
+/>
+<liferay-ui:search-container-column-date 
+	name="HORA_REENVIO" 
+	value="<%= entry.getReTryDate() %>" 
+/>
+<liferay-ui:search-container-column-text 
+	name="DESCRIPTIONERROR" 
+	value="<%= entry.getResponseWS() %>" 
+/>

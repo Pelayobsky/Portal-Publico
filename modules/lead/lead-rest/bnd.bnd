@@ -1,0 +1,4 @@
+Bundle-Name: lead-rest
+Bundle-SymbolicName: mx.movistar.col.lead.rest
+Bundle-Version: 1.0.0
+Liferay-Configuration-Path: /configuration

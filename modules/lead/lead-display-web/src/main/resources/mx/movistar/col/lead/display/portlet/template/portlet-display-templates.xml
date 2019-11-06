@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+	<template>
+		<template-key>lead-ftl</template-key>
+		<name>lead-template</name>
+		<description>This is an Application Display Template example for the Lead. You can find this template in the lead-panelapp/src/main/resources folder.</description>
+		<language>ftl</language>
+		<script-file>mx/movistar/col/lead/display/portlet/template/portlet-display-templates.xml</script-file>
+		<cacheable>false</cacheable>
+	</template>
+</root>

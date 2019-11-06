@@ -1,0 +1,37 @@
+<%--
+	Searchcontainer display styles for the assignment list.
+--%>
+<%@ include file="../init.jsp"%>
+<%-- Generate view assignment submissions URL. --%>
+
+<portlet:renderURL var="viewCampaignsURL">
+	<portlet:param name="mvcRenderCommandName" value="<%=MVCCommandNames.VIEW_CAMPAIGN %>" />
+	<portlet:param name="redirect" value="${currentURL}" />
+	<portlet:param name="campaignId" value="${entry.campaignId}" />
+</portlet:renderURL>
+
+	
+		<liferay-ui:search-container-column-text 
+			href="${viewCampaignsURL}" 
+			name="title" 
+			value="<%= entry.getTitle(locale) %>" 
+		/>
+		
+		<liferay-ui:search-container-column-user 
+			name="author" 
+			userId="${entry.userId}" 
+		/>
+
+		<liferay-ui:search-container-column-date 
+			name="create-date"
+			property="createDate" 
+		/>
+
+		<liferay-ui:search-container-column-status 
+			name="status" 
+		/>
+
+		<liferay-ui:search-container-column-jsp 
+			name="actions"
+			path="/campaign/entry_actions.jsp" 
+		/>

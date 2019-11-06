@@ -1,0 +1,45 @@
+<%--
+	Searchcontainer display styles for the assignment list.
+--%>
+<%@ include file="../init.jsp"%>
+<%-- Generate view assignment submissions URL. --%>
+
+<portlet:renderURL var="viewCallCenterURL">
+	<portlet:param name="mvcRenderCommandName" value="<%=MVCCommandNames.VIEW_CALLCENTER %>" />
+	<portlet:param name="redirect" value="${currentURL}" />
+	<portlet:param name="callCenterId" value="${entry.callCenterId}" />
+</portlet:renderURL>
+
+<%-- Display style options. --%>
+
+	<%-- Descriptive (list) view --%>
+
+	
+		<liferay-ui:search-container-column-text 
+			href="${viewCallCenterURL}" 
+			name="title" 
+			value="<%= entry.getTitle(locale) %>" 
+		/>
+
+		<liferay-ui:search-container-column-user 
+			name="author" 
+			userId="${entry.userId}" 
+		/>
+
+		<liferay-ui:search-container-column-date 
+			name="create-date"
+			property="createDate" 
+		/>
+
+		<liferay-ui:search-container-column-status 
+			name="status" 
+		/>
+
+		<liferay-ui:search-container-column-jsp 
+			name="actions"
+			path="/callcenter/entry_actions.jsp" 
+		/>
+
+
+
+
